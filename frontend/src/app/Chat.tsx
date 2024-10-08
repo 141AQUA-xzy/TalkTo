@@ -51,7 +51,7 @@ export function Chat({ socket, username, room }: ChatProps) {
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
-          {messageList.map((messageContent) => {
+          {messageList.map((messageContent, index) => {
             return (
               <div
                 key={index}
