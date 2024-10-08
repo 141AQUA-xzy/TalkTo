@@ -53,6 +53,7 @@ export function Chat({ socket, username, room }: ChatProps) {
           {messageList.map((messageContent) => {
             return (
               <div
+                key={index}
                 className="message"
                 id={username === messageContent.author ? "you" : "other"}
               >
@@ -83,7 +84,7 @@ export function Chat({ socket, username, room }: ChatProps) {
             setCurrentMessage(event.target.value);
           }}
           onKeyPress={(event) => {
-            event.key === "Enter" && sendMessage();
+            if (event.key === "Enter") sendMessage();
           }}
           className="text-black"
         />
