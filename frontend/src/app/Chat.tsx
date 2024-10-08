@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
+import { Socket } from "socket.io-client";
 
 interface ChatProps {
-  socket: any;
+  socket: Socket;
   username: string;
   room: string;
 }
